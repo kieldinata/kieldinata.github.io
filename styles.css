@@ -1,0 +1,119 @@
+body {
+    margin: 0;
+    font-family: 'Archivo', sans-serif;
+    background-color: black;
+    height: 300vmin;
+    display: flex;
+    justify-content: center;
+}
+
+    body::-webkit-scrollbar {
+        display: none;
+    }
+
+.about {
+    top: 0;
+    left: 0;
+}
+
+.video-background {
+    z-index: -1;
+}
+
+#bg-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: contrast(2);
+}
+
+h1 {
+    font-size: 5vmin;
+    color: whitesmoke;
+    position: absolute;
+    z-index: 1;
+    transform: translate(7vmax, -47vmin);
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    z-index: 1000;
+    transition: background-color 0.3s, height 0.3s, box-shadow 0.3s;
+}
+
+    header.scrolled {
+        background-color: rgba(0, 0, 0, 0.8);
+        height: 8vh;
+    }
+
+    header ul {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    header .navselect {
+        font-size: 2vmin;
+        font-weight: 800;
+        margin: 0;
+        transition: font-size 0.3s, color 0.3s;
+    }    
+
+    header li {
+        padding: 1vmin 2vmin;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+
+        header li:hover {
+            color: #f0f0f0;
+            transform: scale(1.2);
+        }
+
+    header.scrolled .navselect li {
+        font-size: 1.8vmin;
+        font-weight: 400;
+        color: #e0e0e0;
+    }
+
+    header.scrolled li:hover {
+        color: #ffffff;
+        font-size: 2vmin;
+    }
+
+@media (max-aspect-ratio: 1/1) {
+    header {
+        height: 12vh;
+    }
+
+        header .navselect {
+            font-size: 2vmin;
+            display: flex;
+        }
+
+    .navselect .left {
+        justify-content: normal;
+    }
+
+    .navselect .right {
+        justify-content: normal;
+    }
+
+    header li:hover {
+        font-size: 2.2vmin;
+    }
+
+    h1 {
+        transform: translate(10vmax, -35vmin);
+        font-size: 3.7vmin;
+    }
+}
