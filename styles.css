@@ -1,44 +1,33 @@
+@font-face {
+    font-family: 'HARUKAZE';
+    src: url('Harukaze.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
-    font-family: 'Archivo', sans-serif;
+    font-family: 'Archivo', sans-serif; /* Default font for the body */
     background-color: black;
     height: 300vmin;
+    width: 100vw;
     display: flex;
     justify-content: center;
+    overflow-x: hidden;
+    transition: 0.3s;
 }
 
     body::-webkit-scrollbar {
         display: none;
     }
 
-.about {
-    top: 0;
-    left: 0;
-}
-
-.video-background {
-    z-index: -1;
-}
-
-#bg-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: contrast(2);
-}
-
-h1 {
-    font-size: 5vmin;
-    color: whitesmoke;
-    position: absolute;
-    z-index: 1;
-    transform: translate(7vmax, -47vmin);
-}
-
 header {
     position: fixed;
     top: 0;
-    left: 0;
     width: 100vw;
     height: 10vh;
     display: flex;
@@ -47,11 +36,12 @@ header {
     color: white;
     z-index: 1000;
     transition: background-color 0.3s, height 0.3s, box-shadow 0.3s;
+    padding: 0 0; /* Add some padding for better spacing */
 }
 
     header.scrolled {
-        background-color: rgba(0, 0, 0, 0.8);
-        height: 8vh;
+        background-color: rgba(0, 0, 0, 1);
+        height: 8vmin;
     }
 
     header ul {
@@ -66,7 +56,12 @@ header {
         font-weight: 800;
         margin: 0;
         transition: font-size 0.3s, color 0.3s;
-    }    
+    }
+
+    .navselect li a {
+        color: inherit; 
+        text-decoration: none;
+    }
 
     header li {
         padding: 1vmin 2vmin;
@@ -81,7 +76,7 @@ header {
 
     header.scrolled .navselect li {
         font-size: 1.8vmin;
-        font-weight: 400;
+        font-weight: 600;
         color: #e0e0e0;
     }
 
@@ -90,6 +85,49 @@ header {
         font-size: 2vmin;
     }
 
+.hero {
+    top: 10vh;
+    height: 100vh; /* Ensure it takes the full viewport height */
+    width: 100vw;
+}
+
+.video-background {
+    z-index: -1;
+    position: relative;
+    top:0vh;
+    height: 70vh;
+    width: 70vw;
+    margin: 0 auto;
+    
+    
+}
+
+#bg-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: contrast(2);
+    align-items: center;
+}
+
+h1 {
+    font-size: 10vmin;
+    font-family: 'HARUKAZE'; /* Font for h1 */
+    color: ghostwhite;
+    letter-spacing: 1vmin;
+    text-align: center;
+    z-index: 1;
+}
+
+p {
+    font-size: 3vmin;
+    color: ghostwhite;
+    margin: 5vmin;
+    text-align: center; /* Center align text */
+    z-index: 1;
+}
+
+
 @media (max-aspect-ratio: 1/1) {
     header {
         height: 12vh;
@@ -97,23 +135,23 @@ header {
 
         header .navselect {
             font-size: 2vmin;
-            display: flex;
         }
 
-    .navselect .left {
-        justify-content: normal;
+        header li:hover {
+            font-size: 2.2vmin;
+        }
+
+    .video-background{
+        top: 10vh;
+        left: 2vmin;
     }
 
-    .navselect .right {
-        justify-content: normal;
+    h1{
+        top: 80vh;
+        left: 5vmin;
+        position: absolute
     }
 
-    header li:hover {
-        font-size: 2.2vmin;
-    }
-
-    h1 {
-        transform: translate(10vmax, -35vmin);
-        font-size: 3.7vmin;
-    }
+    
 }
+
