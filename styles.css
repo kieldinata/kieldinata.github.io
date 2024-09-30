@@ -11,7 +11,7 @@ html {
 
 body {
     margin: 0;
-    font-family: 'Archivo', sans-serif; /* Default font for the body */
+    font-family: 'Archivo', sans-serif; 
     background-color: black;
     height: 300vmin;
     width: 100vw;
@@ -36,7 +36,7 @@ header {
     color: white;
     z-index: 1000;
     transition: background-color 0.3s, height 0.3s, box-shadow 0.3s;
-    padding: 0 0; /* Add some padding for better spacing */
+    padding: 0 0; 
 }
 
     header.scrolled {
@@ -87,7 +87,7 @@ header {
 
 .hero {
     top: 10vh;
-    height: 100vh; /* Ensure it takes the full viewport height */
+    height: 100vh; 
     width: 100vw;
 }
 
@@ -110,21 +110,49 @@ header {
     align-items: center;
 }
 
+.section {
+    position: absolute;
+}
+
+#about {
+    top: 100vh;
+    text-align: center;
+    color: ghostwhite;
+    margin-left:20vmin;
+}
+
 h1 {
     font-size: 10vmin;
-    font-family: 'HARUKAZE'; /* Font for h1 */
+    font-family: 'HARUKAZE'; 
     color: ghostwhite;
     letter-spacing: 1vmin;
     text-align: center;
     z-index: 1;
 }
 
+h3 {
+    color: ghostwhite;
+    font-size: 3vmin;
+    margin-left: 20vw;
+    text-align: left;
+}
+
 p {
     font-size: 3vmin;
+    margin-right: 20vw;
+    margin-left: 20vw;
     color: ghostwhite;
-    margin: 5vmin;
-    text-align: center; /* Center align text */
+    text-align: left; 
     z-index: 1;
+}
+
+.profilepic {
+    top: -10vh;
+    float: right;
+    width: 10vw;
+    height: auto;
+    margin-right: 20vh;
+    filter: grayscale(1);
 }
 
 
@@ -149,7 +177,15 @@ p {
     h1{
         top: 80vh;
         left: 5vmin;
-        position: absolute
+        position: absolute;
+    }
+
+    h3 {
+        font-size: 4vmin;
+    }
+
+    #about {
+        top: 90vh;
     }
 
     
