@@ -1,0 +1,211 @@
+@font-face{
+    font-family: 'Lineal';
+    src: url("fonts/Lineal/Lineal-Heavy.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'Karrik';
+    src: url("fonts/Karrik/Karrik-Regular.woff");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'Basteulur';
+    src: url("fonts/Basteulur/Basteleur-Moonlight.woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@keyframes slideinL {
+    0% {
+        transform: scale(0.1, 1) translateX(-50%);
+    }
+    100% {
+        transform: scale(1, 1) translateX(0);
+    }
+}
+
+@keyframes slideinD {
+    0% {
+        transform: scale(1, 0.1) translateY(-50%);
+    }
+    100% {
+        transform: scale(1, 1) translateY(0);
+    }
+}
+
+body {
+    background-color: #e7e7e7;
+    height: 260vh;
+}
+
+.navigation {
+    position: fixed;
+    width: 100%;
+    height: 8vmin;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    background: #e1e1e1;
+    display: flex;
+    justify-content: flex-end;
+    transition: all 0.3s ease; /* Smooth transition */
+}
+.navigation.scrolled {
+    height: 6vmin; /* Change height when scrolled */
+}
+.navigation ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: inline-flex;
+}
+.navigation li {
+    margin-inline: 5vmin;
+    margin-top: 1.5vmin;
+}
+.navigation a {
+    font-family: 'Lineal';
+    font-size: 4vmin;
+    text-decoration: none;
+    color: black; /* Change link color when scrolled */
+    transition: all 0.5s ease; /* Smooth color transition */
+}
+.navigation.scrolled a {
+    font-size: 3vmin;
+}
+
+h1{
+    font-family: 'Basteulur';
+    font-size: 20vmin;
+    display: flex;
+    text-align: center;
+    margin: 4vw;
+    position: absolute;
+    top: 30vh;
+    word-wrap: break-word; /* Allows long words to break and wrap onto the next line */
+    word-break: break-word; /* Ensures that words break and wrap properly */
+    white-space: normal;
+}
+
+.pins {
+    transition: all 0.5s ease;
+    column-count: 4;
+    width: min-content;
+    height: fit-content;
+    position: relative;
+    top: 90vh;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #e7e7e7;
+    border-radius: 15px;
+    align-items: center;
+}
+.pins:hover .cards:not(:hover) {
+    filter: grayscale(1) contrast(1.3);
+}
+
+.cards-container {
+    position: relative;
+    display: inline-block;
+    margin: 1vmin;
+    max-width: fit-content;
+    transition: all 0.2s ease;
+    height: auto;
+    z-index: 0;
+}
+.cards-container:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+.cards {
+    border-radius: 10px;
+    cursor: pointer;
+    max-width: 15vw;
+    opacity: 0;
+    z-index: 0;
+}
+.side.visible {
+    opacity: 1;
+    animation: slideinL 0.5s ease;
+}
+.down.visible {
+    opacity: 1;
+    animation: slideinD 0.5s ease;
+}
+.cards-container:hover {
+    transform: scale(1.15) translate(-1vmin,-2vmin);
+    z-index: 1;
+}
+
+.tooltip {
+    visibility: hidden;
+    width: fit-content;
+    background-color: #8e0303;
+    color: #fff;
+    font-family: 'Karrik';
+    font-weight: 300;
+    text-align: center;
+    white-space: nowrap;
+    border-radius: 5px;
+    padding: 10px;
+    position: absolute;
+    bottom: 115%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1;
+}
+.tooltip::after {
+    content: '';
+    position: absolute;
+    bottom: -20%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: #8e0303 transparent transparent transparent;
+}
+
+
+@media (max-aspect-ratio: 1/1) {
+    .navigation {
+        height: 10vmin; /* Increase height for touch-friendly mobile */
+    }
+    .navigation.scrolled {
+        height: 6vmin; /* Adjust height when scrolled on mobile */ /* Center the items when scrolled */
+    }
+    .navigation li {
+        margin-inline: 2vmin; /* Adjust spacing for mobile */
+    }
+    .navigation a {
+        font-size: 4vmin; /* Increase font size for mobile */
+    }
+
+    h1{
+        top: 10vh;
+    }
+
+    .pins {
+        column-count: 2;
+        top: 60vh;
+        left: 50%;
+        transform: translateX(-50%);
+        pointer-events: none;
+    }
+
+    .cards-container {
+        max-width: 90vw;
+    }
+    .cards {
+        max-width: 38vw;
+        margin-bottom: 2vmin;
+        gap: 1vmin;
+    }
+
+    .tooltip {
+        font-size: 3vmin;
+    }
+}
