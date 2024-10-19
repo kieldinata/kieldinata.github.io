@@ -1,7 +1,7 @@
 @font-face{
     font-family: 'Lineal';
-    src: url("fonts/Lineal/Lineal-Heavy.otf");
-    font-weight: normal;
+    src: url("fonts/Lineal/Lineal-Medium.otf");
+    font-weight: 150;
     font-style: normal;
 }
 @font-face{
@@ -67,11 +67,15 @@ body {
 }
 .navigation a {
     font-family: 'Lineal';
-    font-weight: 200;
+    letter-spacing: 1vmin;
+    font-weight: 400;
     font-size: 4vmin;
     text-decoration: none;
     color: #01107d;
     transition: all 0.5s ease;
+}
+.navigation li:hover{
+    transform: scale(1.2);
 }
 .navigation.scrolled a {
     font-size: 3vmin;
@@ -83,11 +87,12 @@ h1{
     font-size: 20vmin;
     display: flex;
     text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
     margin: 4vw;
     position: absolute;
-    top: 30vh;
+    top: 10vh;
     word-wrap: break-word;
-    word-break: break-word;
     white-space: normal;
 }
 
@@ -100,7 +105,7 @@ h1{
     top: 90vh;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #e7e7e7;
+    background-color: #f9f8ee;
     border-radius: 15px;
     align-items: center;
 }
