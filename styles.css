@@ -36,7 +36,7 @@
 }
 
 body {
-    background-color: #F9F6EE;
+    background-color: #f9f6ee;
     height: 260vh;
 }
 
@@ -47,7 +47,7 @@ body {
     z-index: 10000;
     left: 0;
     top: 0;
-    background: #F9F6EE;
+    background: #f9f8ee;
     display: flex;
     justify-content: flex-end;
     transition: all 0.3s ease;
