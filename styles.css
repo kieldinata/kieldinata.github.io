@@ -50,10 +50,10 @@ body {
     background: #e1e1e1;
     display: flex;
     justify-content: flex-end;
-    transition: all 0.3s ease; /* Smooth transition */
+    transition: all 0.3s ease;
 }
 .navigation.scrolled {
-    height: 6vmin; /* Change height when scrolled */
+    height: 6vmin;
 }
 .navigation ul {
     list-style-type: none;
@@ -69,8 +69,8 @@ body {
     font-family: 'Lineal';
     font-size: 4vmin;
     text-decoration: none;
-    color: black; /* Change link color when scrolled */
-    transition: all 0.5s ease; /* Smooth color transition */
+    color: #01107d;
+    transition: all 0.5s ease;
 }
 .navigation.scrolled a {
     font-size: 3vmin;
@@ -78,14 +78,15 @@ body {
 
 h1{
     font-family: 'Basteulur';
+    color: #01107d;
     font-size: 20vmin;
     display: flex;
     text-align: center;
     margin: 4vw;
     position: absolute;
     top: 30vh;
-    word-wrap: break-word; /* Allows long words to break and wrap onto the next line */
-    word-break: break-word; /* Ensures that words break and wrap properly */
+    word-wrap: break-word;
+    word-break: break-word;
     white-space: normal;
 }
 
@@ -172,16 +173,16 @@ h1{
 
 @media (max-aspect-ratio: 1/1) {
     .navigation {
-        height: 10vmin; /* Increase height for touch-friendly mobile */
+        height: 10vmin;
     }
     .navigation.scrolled {
-        height: 6vmin; /* Adjust height when scrolled on mobile */ /* Center the items when scrolled */
+        height: 6vmin; 
     }
     .navigation li {
-        margin-inline: 2vmin; /* Adjust spacing for mobile */
+        margin-inline: 2vmin;
     }
     .navigation a {
-        font-size: 4vmin; /* Increase font size for mobile */
+        font-size: 4vmin; 
     }
 
     h1{
