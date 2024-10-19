@@ -67,6 +67,7 @@ body {
 }
 .navigation a {
     font-family: 'Lineal';
+    font-weight: 200;
     font-size: 4vmin;
     text-decoration: none;
     color: #01107d;
