@@ -1,6 +1,6 @@
 @font-face{
     font-family: 'Lineal';
-    src: url("fonts/Lineal/Lineal-Medium.otf");
+    src: url("fonts/Lineal/Lineal-Regular.otf");
     font-weight: 150;
     font-style: normal;
 }
@@ -36,8 +36,8 @@
 }
 
 body {
-    background-color: #f9f6ee;
-    height: 260vh;
+    background-image:radial-gradient(circle, #2d2d2d, #181818, #0f0f0f);;
+    height: 280vh;
 }
 
 .navigation {
@@ -47,7 +47,7 @@ body {
     z-index: 10000;
     left: 0;
     top: 0;
-    background: #f9f8ee;
+    background-color: #0f0f0f;
     display: flex;
     justify-content: center;
     transition: all 0.3s ease;
@@ -67,22 +67,23 @@ body {
 }
 .navigation a {
     font-family: 'Lineal';
-    letter-spacing: 1vmin;
-    font-size: 5vmin;
+    letter-spacing: 1.5vmin;
+    font-size: 4vmin;
     text-decoration: none;
-    color: #01107d;
+    color: #fcfcfc;
     transition: all 0.5s ease;
 }
 .navigation li:hover{
     transform: scale(1.2);
 }
 .navigation.scrolled a {
-    font-size: 4vmin;
+    font-size: 3.5vmin;
+    letter-spacing: 1vmin;
 }
 
 h1{
     font-family: 'Basteulur';
-    color: #01107d;
+    color: #fcfcfc;
     font-size: 20vmin;
     display: flex;
     text-align: center;
@@ -97,24 +98,24 @@ h1{
 .pins {
     transition: all 0.5s ease;
     column-count: 4;
-    width: min-content;
+    width: 70vw;
     height: fit-content;
     position: relative;
     top: 90vh;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #f9f8ee;
+    background-color: #1f1f1f;
     border-radius: 15px;
-    align-items: center;
 }
 .pins:hover .cards:not(:hover) {
     filter: grayscale(1) contrast(1.3);
 }
 
 .cards-container {
+    left: -1vh;
     position: relative;
-    display: inline-block;
-    margin: 1vmin;
+    display: inline-flex;
+    margin: 3vmin;
     max-width: fit-content;
     transition: all 0.2s ease;
     height: auto;
@@ -186,7 +187,8 @@ h1{
         margin-inline: 2vmin;
     }
     .navigation a {
-        font-size: 5.5vmin; 
+        font-size: 5.5vmin;
+        letter-spacing: 1vmin; 
     }
     .navigation.scrolled a{
         font-size: 4vmin;
@@ -198,7 +200,8 @@ h1{
 
     .pins {
         column-count: 2;
-        top: 60vh;
+        width: 95vw;
+        top: 70vh;
         left: 50%;
         transform: translateX(-50%);
         pointer-events: none;
