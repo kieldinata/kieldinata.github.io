@@ -1,0 +1,255 @@
+@font-face {
+    font-family: 'Lineal';
+    src: url("fonts/Lineal/Lineal-Regular.otf");
+    font-weight: 150;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Karrik';
+    src: url("fonts/Karrik/Karrik-Regular.woff");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Basteulur';
+    src: url("fonts/Basteulur/Basteleur-Moonlight.woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-image:radial-gradient(circle, #5e0202, #610000, #b50303);
+    height: 190vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.navigation {
+    position: fixed;
+    width: 100%;
+    height: 8vmin;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    background-color: #feffe4;
+    display: flex;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+.navigation.scrolled {
+    height: 6vmin;
+}
+.navigation ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: inline-flex;
+}
+.navigation li {
+    margin-inline: 5vmin;
+    margin-top: 1.5vmin;
+}
+.navigation a {
+    position: relative;
+    font-family: 'Lineal';
+    letter-spacing: 1.5vmin;
+    font-size: 4vmin;
+    text-decoration: none;
+    color: #b50303;
+    transition: all 0.5s ease;
+}
+.navigation li:hover {
+    transform: scale(1.2);
+}
+.navigation.scrolled a {
+    font-size: 4vmin;
+    letter-spacing: 1vmin;
+    top: -1vmin;
+}
+
+
+.big {
+    text-align: center;
+    position: relative;
+    top: 10vh;
+    font-size: 16vmin;
+}
+.notsobig{
+    position: inherit;
+    left: 27vw;
+    top: -10vh;
+    font-size: 6vmin;
+
+}
+.line1 {
+    text-align: center;
+    position: relative;
+    font-size: 5vmin;
+    top: 5vh;
+}
+.line2 {
+    font-size: 5vmin;
+    top: 11vh;
+    text-align: left;
+    left: 27vw;
+    position: inherit;
+}
+.line3 {
+    font-size: 4vmin;
+    top: 25vh;
+    text-align: left;
+    left: 27vw;
+    position: inherit;
+}
+
+h1 {
+    font-family: 'Basteulur';
+    color: #feffe4;
+    margin: 10vw;
+}
+p {
+    font-family: 'Lineal';
+    font-weight: 200;
+    color: #feffe4;
+
+    margin: 10vw;
+
+}
+
+.text {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.text.visible {
+    opacity: 1;
+    animation: fadein 0.5s ease-in forwards;
+}
+
+.boxy{
+    position: absolute;
+    display: flex;
+    align-items: flex-start;
+    top: 90vh;
+    left: 5vw;
+    width: 90vw;
+    height: 73vh;
+    background-color: #3d0101;
+    border-radius: 5vmin;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    box-shadow: 10px 10px 10px #3d0101;
+}
+.cards.visible{
+    opacity: 1;
+}
+.face{
+    margin: 5vmin;
+    position: inherit;
+    width: 30vw;
+    height: 30vw;
+    background-image: url(skin/myface.jpg);
+    border-radius: 10%;
+    border: #feffe4 solid 2px;
+    background-size: cover;
+    filter: saturate(0);
+}
+
+.button {
+    position: relative;
+    top: 100vh;
+    left: 50vw;
+    transform: translateX(-50%);
+    width: 30vw;
+    height: 10vh;
+    background-color: #3d0101;
+    color: white;
+    align-content: center;
+    text-align: center;
+    border-radius: 5vmin;
+    box-shadow: 10px 10px 10px #3d0101;
+    transition: all ease 0.5s;
+}
+
+.button a{
+    text-decoration: none;
+    font-family: 'Lienal';
+    font-size: 4vmin;
+    color: #feffe4;
+}
+.button:hover{
+    left: 50vw;
+    transform: translateX(-50%) scale(1.1);
+    background-color: #feffe4;
+}
+.button:hover a{
+    color: #3d0101;
+}
+
+@media (max-aspect-ratio: 1/1) {
+    body{
+        height: 150vh;
+    }
+
+    .navigation {
+        height: 10vmin;
+    }
+    .navigation.scrolled {
+        height: 6vmin;
+    }
+    .navigation li {
+        margin-inline: 2vmin;
+    }
+    .navigation a {
+        font-size: 5.5vmin;
+        letter-spacing: 1vmin;
+    }
+    .navigation.scrolled a {
+        font-size: 4vmin;
+    }
+    
+    .notsobig{
+        left: 7vw;
+        top: 30vh;
+        font-size: 6vmin;
+    
+    }
+    .line2 {
+        font-size: 4.5vmin;
+        top: 45vh;
+        text-align: left;
+        left: 7vw;
+        position: inherit;
+    }
+    .line3 {
+        font-size: 3vmin;
+        top: 53vh;
+        text-align: left;
+        left: 7vw;
+        position: inherit;
+    }
+
+    .line1 {
+        top: 5vh;
+    }
+
+    h1 {
+        margin-top: 10vh;
+        font-size: 14vmin;
+    }
+
+    .cards{
+        top: 50vh;
+    }
+    .face{
+        left: 10vw;
+        width: 60vw;
+        height: 60vw;
+    }
+
+    .button{
+        top: 97vh;
+    }
+}

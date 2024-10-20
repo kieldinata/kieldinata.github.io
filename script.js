@@ -1,17 +1,20 @@
 document.addEventListener("DOMContentLoaded", function() {
+    document.body.classList.add('no-scroll');
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.querySelector('.cards').classList.add('visible');
+                entry.target.classList.add('visible');
             } else {
-                entry.target.querySelector('.cards').classList.remove('visible'); 
+                entry.target.classList.remove('visible'); 
             }
         });
-    }, { threshold: 0.5 }); //treshold kliatan
+    }, { threshold: 0.5 });
 
-    const cardContainers = document.querySelectorAll('.cards-container');
-    cardContainers.forEach(container => {
-        observer.observe(container);
+
+    const elementsToObserve = document.querySelectorAll('.cards, .text, .cards-container');
+    elementsToObserve.forEach(element => {
+        observer.observe(element);
     });
 });
 
@@ -22,5 +25,4 @@ window.addEventListener('scroll', function() {
     } else {
         navigation.classList.remove('scrolled');
     }
-    });
-
+});
