@@ -135,7 +135,7 @@ p {
     left: 5vw;
     width: 90vw;
     height: 73vh;
-    background-color: #3d0101;
+    background-color: #7b0d0d;
     border-radius: 5vmin;
     z-index: -1;
     opacity: 0;
@@ -253,3 +253,4 @@ p {
         top: 97vh;
     }
 }
+
